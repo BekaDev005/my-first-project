@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <script>
+
+      function createStudentList () {
+         let count = document.getElementById("studentCount").value
+         container = document.getElementById("container") 
+         for( let i = 1; i <= count; i++) {
+            let newDiv = document.createElement("div")
+
+            let newInput = document.createElement("input")
+            newInput.type = "text"
+            newInput.style.marginRight = "10px" 
+            newInput.style.marginBottom = "10px"
+            newInput.placeholder = "Ogrencinin adi-soyadi"
+
+            let newButton = document.createElement("button")
+            newButton.innerText = "Sil" 
+
+            newButton.addEventListener("click", function(){
+                alert("Bir kayit silinecek!")
+                     newDiv.remove()
+              
+            })
+
+            
+
+            newDiv.appendChild(newInput) 
+            newDiv.appendChild(newButton)
+            container.appendChild(newDiv)
+
+         }
+      }
+
+      
+
+
+
+   </script>
+</head>
+<body>
+
+   
+      <label for="studentCount">Kac eleman olsun? </label>
+      <input type="number" id="studentCount" max="99" min="0">
+      <button onclick="createStudentList()">Ogrenci Listesini olustur</button>
+    <hr>
+
+    <div id="container">
+
+    </div>
+
+
+   
+</body>
+</html>
